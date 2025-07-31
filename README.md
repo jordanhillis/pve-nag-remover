@@ -107,7 +107,7 @@ sudo ./pve-nag-remover.sh cron-status
 
 ```bash
 sudo pve-nag-remover status       # Show patch status and backup info
-pve-nag-remover --version         # Show version, author, and contact
+pve-nag-remover --version         # Show version
 ```
 
 ---
