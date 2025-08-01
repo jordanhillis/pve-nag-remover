@@ -1,5 +1,9 @@
 name: Update latest_version.txt
 
+concurrency:
+  group: push-to-main
+  cancel-in-progress: false
+
 on:
   push:
     paths:
