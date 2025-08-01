@@ -203,7 +203,7 @@ Use at your own risk. This script modifies core Proxmox UI files and may be over
 
 ## 📄 License
 
-MIT — free to use, modify, and distribute.
+[MIT](/LICENSE) — free to use, modify, and distribute.
 
 ---
 
