@@ -133,7 +133,9 @@ check_for_update() {
         curl -fsSL "$SCRIPT_URL" -o "$TMP_SCRIPT" || fail "Failed to download script."
         curl -fsSL "${SCRIPT_URL}.sha256" -o "$TMP_CHECKSUM" || fail "Failed to download checksum."
 
-        if sha256sum -c --status "$TMP_CHECKSUM"; then
+        EXPECTED_HASH=$(awk '{print $1}' "$TMP_CHECKSUM")
+        ACTUAL_HASH=$(sha256sum "$TMP_SCRIPT" | awk '{print $1}')
+        if [[ "$EXPECTED_HASH" == "$ACTUAL_HASH" ]]; then
           mv "$TMP_SCRIPT" "$0" && chmod +x "$0"
           success "Updated to version $latest_version. Please rerun the script."
           rm -f "$TMP_CHECKSUM"
