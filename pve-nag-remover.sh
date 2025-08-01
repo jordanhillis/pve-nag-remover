@@ -9,7 +9,7 @@
 # │ 📄 License  : MIT                                             │
 # │ 📦 Version  : 1.0.0                                           │
 # └───────────────────────────────────────────────────────────────┘
-# test2234556847777
+# 
 # This script safely removes the "No valid subscription" popup 
 # from the Proxmox VE web interface without affecting system stability.
 #
