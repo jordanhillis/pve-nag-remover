@@ -142,6 +142,8 @@ check_for_update() {
           exit 0
         else
           rm -f "$TMP_SCRIPT" "$TMP_CHECKSUM"
+          log "Expected Checksum: $EXPECTED_HASH"
+          log "Actual Checksum: $ACTUAL_HASH"
           fail "Checksum verification failed! Update aborted."
         fi
         ;;
