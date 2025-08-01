@@ -11,6 +11,9 @@ Proxmox VE (PVE) displays a "No valid subscription" nag popup when used without 
 - 🔁 Re-application at boot or on a schedule (optional)
 
 👉 [View Latest Release](https://github.com/jordanhillis/pve-nag-remover/releases)
+---
+
+![PVE No Subscription](resources/img/pve-no-sub.png)
 
 ---
 
