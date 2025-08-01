@@ -6,6 +6,9 @@ on:
       - 'pve-nag-remover.sh'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   generate-sha:
     runs-on: ubuntu-latest
@@ -14,8 +17,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          persist-credentials: true        # ✅ allows push using GITHUB_TOKEN
-          fetch-depth: 0                   # ✅ ensures full history for commit/push
+          persist-credentials: true
+          fetch-depth: 0
 
       - name: Generate SHA-256 hash file
         run: |
