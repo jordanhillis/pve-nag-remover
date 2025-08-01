@@ -1,0 +1,30 @@
+name: Generate SHA-256 File
+
+on:
+  push:
+    paths:
+      - 'pve-nag-remover.sh'  # Trigger only when this file changes
+  workflow_dispatch:  # Optional manual trigger
+
+jobs:
+  generate-sha:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Generate SHA-256 hash file
+        run: |
+          sha256sum pve-nag-remover.sh > pve-nag-remover.sh.sha256
+          cat pve-nag-remover.sh.sha256
+
+      - name: Commit .sha256 file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pve-nag-remover.sh.sha256
+          git commit -m "Auto-update SHA-256 for pve-nag-remover.sh" || echo "No changes"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
