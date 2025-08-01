@@ -9,7 +9,7 @@
 # │ 📄 License  : MIT                                             │
 # │ 📦 Version  : 1.0.0                                           │
 # └───────────────────────────────────────────────────────────────┘
-# test
+# 
 # This script safely removes the "No valid subscription" popup 
 # from the Proxmox VE web interface without affecting system stability.
 #
@@ -113,7 +113,7 @@ check_for_update() {
 
   if [[ "$latest_version" != "$VERSION" ]]; then
     echo -e "${YELLOW}⚠ Update available: $latest_version (you have $VERSION)${RESET}"
-    echo -e "🔗 View release notes: ${BLUE}${RELEASE_PAGE}${RESET}"
+    echo -e "🔗 View release notes: ${BLUE}${RELEASE_PAGE}/releases${RESET}"
 
     if [[ "$AUTO_UPDATE" == true ]]; then
       log "Auto-update enabled. Proceeding with update..."
